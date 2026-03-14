@@ -4,9 +4,10 @@ import { SearchBarTextService } from '../search-bar-text.service';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+    selector: 'app-header',
+    templateUrl: './header.component.html',
+    styleUrl: './header.component.scss',
+    standalone: false
 })
 export class HeaderComponent {
   constructor(private categoryService: CategoriesService, private searchBarTextService: SearchBarTextService) {}
