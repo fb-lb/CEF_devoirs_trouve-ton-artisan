@@ -1,0 +1,65 @@
+<main class="font-graphik">
+  <h1 class="bg-primary pb-10 pt-9 text-center text-4xl font-semibold text-secondary medium:pb-0 medium:pt-12 large:pb-3 large:pt-16">
+    Les artisans de la région
+  </h1>
+  <div class="flex flex-col items-center gap-10 px-6 py-8 medium:hidden">
+    <div class="flex w-full flex-col items-center gap-5">
+      <h2 class="text-lg font-medium">Filtrer par catégorie</h2>
+      <div class="flex w-full flex-col gap-5">
+        <div class="flex justify-between gap-5">
+          <button
+            id="button-Bâtiment"
+            class="w-48 rounded-full border-2 border-black py-1 transition-all hover:bg-primary"
+            type="button"
+            (click)="setCategorySelected('Bâtiment')"
+            >
+            Bâtiment
+          </button>
+          <button
+            id="button-Services"
+            class="w-48 rounded-full border-2 border-black py-1 transition-all hover:bg-primary"
+            type="button"
+            (click)="setCategorySelected('Services')"
+            >
+            Services
+          </button>
+        </div>
+        <div class="flex justify-between gap-5">
+          <button
+            id="button-Fabrication"
+            class="w-48 rounded-full border-2 border-black py-1 transition-all hover:bg-primary"
+            type="button"
+            (click)="setCategorySelected('Fabrication')"
+            >
+            Fabrication
+          </button>
+          <button
+            id="button-Alimentation"
+            class="w-48 rounded-full border-2 border-black py-1 transition-all hover:bg-primary"
+            type="button"
+            (click)="setCategorySelected('Alimentation')"
+            >
+            Alimentation
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="flex w-full items-center justify-between rounded-full bg-primary px-6 py-3 medium:hidden">
+      <input
+        [(ngModel)]="inputValue"
+        (ngModelChange)="setSearchBarText()"
+        class="w-full bg-primary focus:outline-none"
+        type="text"
+        placeholder="Rechercher"
+        >
+        <i class="fa-solid fa-magnifying-glass pr-1 text-secondary"></i>
+      </div>
+    </div>
+    <div class="flex flex-wrap justify-center gap-8 bg-primary px-6 py-16 small:justify-between medium:px-10 large:px-24">
+      @for (craftsman of allData | filterByText: currentSearchText | filterByCategory: currentCategory; track craftsmanId($index, craftsman)) {
+        <app-card-list-craftsman
+          [craftsmanData]="craftsman"
+        ></app-card-list-craftsman>
+      }
+    </div>
+  </main>
