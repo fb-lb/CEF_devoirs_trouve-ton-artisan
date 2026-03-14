@@ -9,12 +9,12 @@ This project uses external technologies like :
 - EmailJS to send mails to craftsman and private customers (auto-reply),
 - Sentry to report errors.
 
-Website URL : https://hyle.alwaysdata.net/
+Website URL : https://fb-lb.github.io/CEF_devoirs_trouve-ton-artisan/
 Project repository : https://github.com/fb-lb/trouve-ton-artisan
 
 For the moment, to access to the 404 page not found you can click on the link (404) in the footer.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.8.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli)
 
 ## Recommended IDE
 
@@ -34,7 +34,8 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.  
+In package.json build script, modify the url base href or delete it if you don't need one.
 
 ## Running unit tests
 
