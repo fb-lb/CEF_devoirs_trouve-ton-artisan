@@ -8,7 +8,7 @@ export class CraftsmanDataService {
 
   async getData() {
     try {
-      let dataJSON = await fetch('/assets/datas.json');
+      let dataJSON = await fetch('assets/datas.json');
       let allData = await dataJSON.json();
       return allData;
     } catch (error: any) {
