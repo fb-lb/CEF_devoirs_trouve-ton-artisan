@@ -5,9 +5,10 @@ import { SearchBarTextService } from '../search-bar-text.service';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-craftsman-list',
-  templateUrl: './craftsman-list.component.html',
-  styleUrl: './craftsman-list.component.scss',
+    selector: 'app-craftsman-list',
+    templateUrl: './craftsman-list.component.html',
+    styleUrl: './craftsman-list.component.scss',
+    standalone: false
 })
 export class CraftsmanListComponent {
   allData: any[] = [];

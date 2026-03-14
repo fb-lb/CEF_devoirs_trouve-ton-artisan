@@ -6,9 +6,10 @@ import emailjs from '@emailjs/browser';
 import { environment } from '../../environments/environment';
 
 @Component({
-  selector: 'app-craftsman',
-  templateUrl: './craftsman.component.html',
-  styleUrl: './craftsman.component.scss',
+    selector: 'app-craftsman',
+    templateUrl: './craftsman.component.html',
+    styleUrl: './craftsman.component.scss',
+    standalone: false
 })
 export class CraftsmanComponent {
   craftsman: any = {};

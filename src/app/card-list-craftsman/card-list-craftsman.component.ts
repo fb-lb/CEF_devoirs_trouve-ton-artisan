@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-card-list-craftsman',
-  templateUrl: './card-list-craftsman.component.html',
-  styleUrl: './card-list-craftsman.component.scss'
+    selector: 'app-card-list-craftsman',
+    templateUrl: './card-list-craftsman.component.html',
+    styleUrl: './card-list-craftsman.component.scss',
+    standalone: false
 })
 export class CardListCraftsmanComponent {
 

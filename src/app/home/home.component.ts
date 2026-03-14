@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { CraftsmanDataService } from '../craftsman-data.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.scss',
+    standalone: false
 })
 export class HomeComponent {
   allData: any[] = [];

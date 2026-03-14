@@ -1,4 +1,4 @@
-import { NgModule, ErrorHandler, APP_INITIALIZER } from '@angular/core';
+import { NgModule, ErrorHandler, inject, provideAppInitializer } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -50,19 +50,16 @@ import { StarFillingPipe } from './star-filling.pipe';
   ],
   providers: [
     {
-          provide: ErrorHandler,
-          useValue: Sentry.createErrorHandler(),
-        },
-        {
-          provide: Sentry.TraceService,
-          deps: [Router],
-        },
-        {
-          provide: APP_INITIALIZER,
-          useFactory: () => () => {},
-          deps: [Sentry.TraceService],
-          multi: true,
-        },
+      provide: ErrorHandler,
+      useValue: Sentry.createErrorHandler(),
+    },
+    {
+      provide: Sentry.TraceService,
+      deps: [Router],
+    },
+    provideAppInitializer(() => {
+      inject(Sentry.TraceService)
+    }),
   ],
   bootstrap: [AppComponent]
 })

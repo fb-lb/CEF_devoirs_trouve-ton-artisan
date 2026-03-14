@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'starFilling'
+    name: 'starFilling',
+    standalone: false
 })
 export class StarFillingPipe implements PipeTransform {
 
